@@ -4,230 +4,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff4c7">
-  <title>A Little World of Pikachu ⚡</title>
+  <meta name="theme-color" content="#fff0a8">
+  <title>Pikachu's Little World ⚡💛</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 </head>
 <body>
-  <div class="sparkles" aria-hidden="true"></div>
+  <div class="sparkles" aria-hidden="true">⚡ ✦ 💛 ✧ ⚡ ✦</div>
 
   <header class="topbar">
-    <a class="logo" href="#home">⚡ pika.world</a>
-    <button id="musicToggle" class="small-button">♫ Music: Off</button>
+    <a class="logo" href="#home">⚡ Pikachu World</a>
+    <button id="musicButton" class="music-button" type="button">
+      ♫ Play our music
+    </button>
   </header>
 
-  <audio id="backgroundMusic" loop preload="none">
+  <audio id="backgroundMusic" loop>
     <source src="./assets/music/background.mp3" type="audio/mpeg">
   </audio>
 
   <main>
-    <section id="home" class="hero">
-      <div class="electric">⚡ ✦ ⚡</div>
-      <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
-      <h1>Hey, Pikachu! <span>💛</span></h1>
-      <p class="intro">
-        Someone made you a tiny corner of the internet.
-        No assignments, no boring lectures. Just you, me,
-        a few memories, and a little chaos.
-      </p>
-      <button class="primary" data-go="gallery">
-        Okay, show me 👀 →
-      </button>
-      <p class="tiny">Made with questionable levels of effort.</p>
+    <!-- WELCOME -->
+    <section id="home" class="hero section">
+      <div class="hero-content reveal">
+        <span class="eyebrow">A tiny website for one special human</span>
+        <div class="pikachu" aria-hidden="true">⚡🐥⚡</div>
+        <h1>Welcome to<br><span>Pikachu's World!</span></h1>
+        <p class="hero-text">
+          Two months of conversations, random stories, little arguments,
+          and a whole lot of reasons to smile.
+        </p>
+        <p class="hero-note">This is not a love confession. Relax. 😂</p>
+        <a class="button primary" href="#gallery">Let's explore ✨</a>
+      </div>
+      <div class="floating heart heart-one">💛</div>
+      <div class="floating heart heart-two">⚡</div>
+      <div class="floating heart heart-three">🌼</div>
     </section>
 
-    <section id="gallery" class="chapter hidden">
-      <p class="eyebrow">CHAPTER 01</p>
-      <h2>The Pikachu Gallery 📸</h2>
-      <p class="subtitle">
-        Three pictures that earned their own little corner.
-      </p>
+    <!-- CHAPTER 1: PHOTOS -->
+    <section id="gallery" class="section chapter">
+      <div class="section-heading reveal">
+        <span class="chapter-label">CHAPTER 01</span>
+        <h2>The Pikachu Gallery 📸</h2>
+        <p>Proof that this website has a very important main character.</p>
+      </div>
 
       <div class="photo-grid">
-        <article class="polaroid">
+        <figure class="photo-card reveal">
           <img src="./assets/photos/photo1.jpg"
-               alt="Pikachu picture one" loading="lazy">
-          <h3>Exhibit A</h3>
-          <p>Some pictures deserve a spot outside the gallery. 😌</p>
-        </article>
-        <article class="polaroid tilted">
+               alt="Pikachu photo one" loading="lazy">
+          <figcaption>Exhibit A: Cute behaviour detected ⚡</figcaption>
+        </figure>
+
+        <figure class="photo-card reveal">
           <img src="./assets/photos/photo2.jpg"
-               alt="Pikachu picture two" loading="lazy">
-          <h3>Exhibit B</h3>
-          <p>Looking innocent again? I have my doubts. ⚡</p>
-        </article>
-        <article class="polaroid">
+               alt="Pikachu photo two" loading="lazy">
+          <figcaption>Exhibit B: Main character energy ✨</figcaption>
+        </figure>
+
+        <figure class="photo-card reveal">
           <img src="./assets/photos/photo3.jpg"
-               alt="Pikachu picture three" loading="lazy">
-          <h3>Exhibit C</h3>
-          <p>Okay, I'll stop before you get too proud. 😂</p>
+               alt="Pikachu photo three" loading="lazy">
+          <figcaption>Exhibit C: Definitely not innocent 😂</figcaption>
+        </figure>
+      </div>
+
+      <p class="small-note">
+        Official research result: dangerously photogenic. Case closed. 🕵️
+      </p>
+    </section>
+
+    <!-- CHAPTER 2: SINGING -->
+    <section id="singing" class="section chapter">
+      <div class="section-heading reveal">
+        <span class="chapter-label">CHAPTER 02</span>
+        <h2>The Voice Notes Department 🎤</h2>
+        <p>Important scientific research. Your cooperation is required.</p>
+      </div>
+
+      <div class="fun-card reveal">
+        <div class="card-icon">🎶</div>
+        <h3>First investigation: her singing</h3>
+        <p>Should we listen to Pikachu's legendary singing performance?</p>
+        <div class="button-row">
+          <button class="button primary" id="herYes">Obviously, yes 😌</button>
+          <button class="button secondary" id="herNo">Nope 🙈</button>
+        </div>
+        <p id="herMessage" class="response" aria-live="polite"></p>
+        <div id="herVideoArea" class="video-area" hidden>
+          <p>Presenting the artist of the year... 🏆</p>
+          <video controls playsinline preload="metadata">
+            <source src="./assets/videos/her-singing.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </div>
+      </div>
+
+      <div class="fun-card reveal">
+        <div class="card-icon">🎧</div>
+        <h3>Second investigation: my singing</h3>
+        <p>Are you brave enough to listen to my masterpiece?</p>
+        <div class="button-row">
+          <button class="button primary" id="myYes">Play it 😂</button>
+          <button class="button secondary" id="myNo">Absolutely not</button>
+        </div>
+        <p id="myMessage" class="response" aria-live="polite"></p>
+        <div id="myVideoArea" class="video-area" hidden>
+          <p>Please keep your ears safe. You've been warned. 🤣</p>
+          <video controls playsinline preload="metadata">
+            <source src="./assets/videos/my-singing.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </div>
+      </div>
+
+      <div class="rating-card reveal">
+        <h3>Rate this friendship experience ⭐</h3>
+        <p>Be honest. I can handle the truth. Probably.</p>
+        <div class="rating-buttons" aria-label="Rate this website">
+          <button type="button" data-rating="1" aria-label="1 out of 5">⭐</button>
+          <button type="button" data-rating="2" aria-label="2 out of 5">⭐</button>
+          <button type="button" data-rating="3" aria-label="3 out of 5">⭐</button>
+          <button type="button" data-rating="4" aria-label="4 out of 5">⭐</button>
+          <button type="button" data-rating="5" aria-label="5 out of 5">⭐</button>
+        </div>
+        <p id="ratingMessage" class="response" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3: SHAYARI -->
+    <section id="poetry" class="section chapter">
+      <div class="section-heading reveal">
+        <span class="chapter-label">CHAPTER 03</span>
+        <h2>The Poetry Vault 📝</h2>
+        <p>Three little poems inspired by your legendary dialogues.</p>
+      </div>
+
+      <div class="poetry-grid">
+        <article class="poem-card reveal">
+          <span class="poem-number">01 · The Threat Department</span>
+          <h3>Marungi ^π^</h3>
+          <p>
+            Kehti ho “maarungi”, badi shiddat se dhamkaati ho,<br>
+            Phir apni hi baaton par khud hi muskuraati ho.<br>
+            Tumhare har lafz mein ik alag hi shararat hai,<br>
+            Dhamkiyon ke parde mein chhupi tumhari nazakat hai.
+          </p>
+        </article>
+
+        <article class="poem-card reveal">
+          <span class="poem-number">02 · Breaking News</span>
+          <h3>Aj jaante ho :////////</h3>
+          <p>
+            Har roz naye qisse sunaati ho tum,<br>
+            Apni baaton se mehfil sajaati ho tum,<br>
+            “ Aaj jaante ho…” se shuru hoti hai har kahaani,<br>
+            Aur apne andaaz se har baat banaati ho tum.
+          </p>
+        </article>
+
+        <article class="poem-card reveal">
+          <span class="poem-number">03 · The Drama Department</span>
+          <h3>Baat Nahi Karungi, Jao :pp</h3>
+          <p>
+            “Baat nahi karungi, jao,” yeh farmaan sunaati ho,<br>
+            Khud hi rooth kar phir khud hi yaad aati ho.<br>
+            Yeh kaisa hunar hai tumhari narazgi mein,<br>
+            Door jaane ko kehti ho, phir baaton mein uljhaati ho.
+          </p>
         </article>
       </div>
-
-      <div class="nav-buttons">
-        <button class="secondary" data-go="home">← Home</button>
-        <button class="primary" data-go="voice">Next chapter →</button>
-      </div>
     </section>
 
-    <section id="voice" class="chapter hidden">
-      <p class="eyebrow">CHAPTER 02</p>
-      <h2>The Voice Notes Department 🎙️</h2>
-      <p class="subtitle">
-        Two performances. One very questionable audience.
-      </p>
-
-      <article class="music-card">
-        <span class="big-icon">🎧</span>
-        <p class="eyebrow">PART A · HER VOICE</p>
-        <h3 id="herQuestion">Wanna hear my favourite vocal?</h3>
-        <p id="herMessage" class="subtitle">
-          A very important musical mission awaits.
-        </p>
-        <div id="herChoices" class="choices">
-          <button class="primary" data-her="yes">YESSS 🎶</button>
-          <button class="secondary" data-her="no">Nope 🙃</button>
-        </div>
-        <div id="herVideoArea" class="video-area hidden">
-          <video controls playsinline preload="metadata">
-            <source src="./assets/videos/her-singing.mp4"
-                    type="video/mp4">
-            Your browser cannot play this video.
-          </video>
-          <p>Okay, official vocal appreciation time. 👏</p>
-          <button class="primary" data-next-voice>Next: my turn 🎤</button>
-        </div>
-      </article>
-
-      <article class="music-card">
-        <span class="big-icon">🎤</span>
-        <p class="eyebrow">PART B · MY VOICE</p>
-        <h3 id="myQuestion">Now let me sing for you. Wanna hear?</h3>
-        <p id="myMessage" class="subtitle">
-          Warning: the singer accepts absolutely no responsibility.
-        </p>
-        <div id="myChoices" class="choices">
-          <button class="primary" data-mine="yes">YES 🎤</button>
-          <button class="secondary" data-mine="no">NO 😭</button>
-        </div>
-        <div id="myVideoArea" class="video-area hidden">
-          <video controls playsinline preload="metadata">
-            <source src="./assets/videos/my-singing.mp4"
-                    type="video/mp4">
-            Your browser cannot play this video.
-          </video>
-          <p>Thank you for surviving the concert. 😂</p>
-          <button class="primary" data-show-rating>Judge my singing →</button>
-        </div>
-      </article>
-
-      <article id="ratingCard" class="music-card hidden">
-        <p class="eyebrow">THE OFFICIAL JUDGING PANEL</p>
-        <h3>Rate the damage 🎼</h3>
-        <form id="ratingForm">
-          <label for="score">Your score: <strong id="scoreLabel">8/10</strong></label>
-          <input id="score" type="range" min="1" max="10" value="8">
-          <label for="review">Your professional review</label>
-          <select id="review">
-            <option>Actually good, I'm impressed 😌</option>
-            <option>Cute but needs practice 😂</option>
-            <option>Never sing again 💀</option>
-            <option>10/10 because I'm nice 😎</option>
-          </select>
-          <button class="primary" type="submit">Submit my verdict</button>
-        </form>
-        <p id="ratingResult" class="result" aria-live="polite"></p>
-        <p class="tiny">Your verdict appears here on this device.</p>
-      </article>
-
-      <div class="nav-buttons">
-        <button class="secondary" data-go="gallery">← Previous</button>
-        <button class="primary" data-go="poetry">Next chapter →</button>
-      </div>
-    </section>
-
-    <section id="poetry" class="chapter hidden">
-      <p class="eyebrow">CHAPTER 03</p>
-      <h2>The Pikachu Poetry Vault ✍️</h2>
-      <p class="subtitle">
-        Classified documents based on actual Pikachu behaviour.
-      </p>
-
-      <article class="poem">
-        <p class="eyebrow">FILE 001 · THREAT LEVEL: CUTE</p>
-        <h3>Marungi ^π^</h3>
-        <p class="poem-text">Kehti ho “maarungi”, badi shiddat se dhamkaati ho,
-Phir apni hi baaton par khud hi muskuraati ho.
-Tumhare har lafz mein ik alag hi shararat hai,
-Dhamkiyon ke parde mein chhupi tumhari nazakat hai.</p>
-      </article>
-
-      <article class="poem">
-        <p class="eyebrow">FILE 002 · STORY MODE</p>
-        <h3>Aj jaante ho :////////</h3>
-        <p class="poem-text">Har roz naye qisse sunaati ho tum,
-Apni baaton se mehfil sajaati ho tum,
-“ Aaj jaante ho…” se shuru hoti hai har kahaani,
-Aur apne andaaz se har baat banaati ho tum.</p>
-      </article>
-
-      <article class="poem">
-        <p class="eyebrow">FILE 003 · DRAMA ALERT</p>
-        <h3>Baat Nahi Karungi, Jao :pp</h3>
-        <p class="poem-text">“Baat nahi karungi, jao,” yeh farmaan sunaati ho,
-Khud hi rooth kar phir khud hi yaad aati ho.
-Yeh kaisa hunar hai tumhari narazgi mein,
-Door jaane ko kehti ho, phir baaton mein uljhaati ho.</p>
-      </article>
-
-      <div class="nav-buttons">
-        <button class="secondary" data-go="voice">← Previous</button>
-        <button class="primary" data-go="memories">Final chapter 💛 →</button>
-      </div>
-    </section>
-
-    <section id="memories" class="chapter hidden">
-      <p class="eyebrow">THE BONUS CHAPTER</p>
-      <h2>Our Two-Month Time Capsule 💌</h2>
-      <p class="subtitle">
-        Two months of random conversations, unexpected laughs,
-        dramatic threats, and legendary “Aaj jaante ho…” stories.
-      </p>
-
-      <div class="memory-grid">
-        <figure class="memory">
-          <img src="./assets/memories/chat1.jpg"
-               alt="Memory screenshot one" loading="lazy">
-          <figcaption>Memory unlocked #1</figcaption>
-        </figure>
-        <figure class="memory">
-          <img src="./assets/memories/chat2.jpg"
-               alt="Memory screenshot two" loading="lazy">
-          <figcaption>Memory unlocked #2</figcaption>
-        </figure>
-        <figure class="memory">
-          <img src="./assets/memories/chat3.jpg"
-               alt="Memory screenshot three" loading="lazy">
-          <figcaption>Memory unlocked #3</figcaption>
-        </figure>
+    <!-- CHAT MEMORIES -->
+    <section id="memories" class="section chapter memories-section">
+      <div class="section-heading reveal">
+        <span class="chapter-label">BONUS CHAPTER</span>
+        <h2>The Time Capsule 💌</h2>
+        <p>Two months, countless conversations, and memories worth keeping.</p>
       </div>
 
-      <div class="ending">
-        <div class="electric">⚡ ✨ ⚡</div>
-        <h2>End of this little adventure.</h2>
+      <figure class="memory-card reveal">
+        <img src="./assets/memories/chat-memories.jpg"
+             alt="Combined screenshot of our chat memories"
+             loading="lazy">
+        <figcaption>Two months. Countless conversations. ⚡💛</figcaption>
+      </figure>
+
+      <div class="ending-card reveal">
+        <div class="ending-icon">⚡💛⚡</div>
+        <h2>And that's the little world!</h2>
         <p>
-          Here's to more random conversations, more memories,
-          and more reasons to annoy each other. 😂
+          Thanks for the random stories, the laughs, the dramatic dialogues,
+          and all those “Aaj jaante ho…” moments.
         </p>
-        <p class="signature">— Your unofficial Pikachu researcher ⚡</p>
-        <button class="primary" data-go="home">Replay the adventure ↻</button>
+        <p class="ending-joke">
+          Your Pikachu membership remains active. No refunds. 😂
+        </p>
+        <a class="button primary" href="#home">Back to the beginning ↑</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Made with a little chaos and a lot of ⚡</p>
+    <p>Made with a little creativity, a lot of jokes, and ⚡ energy.</p>
+    <p class="footer-small">A tiny corner of the internet, just for Pikachu.</p>
   </footer>
 </body>
 </html>
