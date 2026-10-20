@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "herNo",
     "herMessage",
     "herVideoArea",
-    "No escape! 😂 You can still choose yes."
+    "Na bola jabenaa! Shunteeeeei hobeeee Huhha."
   );
 
   setupSinging(
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "myNo",
     "myMessage",
     "myVideoArea",
-    "Smart decision! My singing is too powerful. 🤣"
+    "Eibhabe na bole dila! Eto kharap gaan kori ami?"
   );
 
   // Star rating
