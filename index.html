@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff4c7">
+  <title>A Little World of Pikachu ⚡</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#home">⚡ pika.world</a>
+    <button id="musicToggle" class="small-button">♫ Music: Off</button>
+  </header>
+
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="./assets/music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="electric">⚡ ✦ ⚡</div>
+      <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+      <h1>Hey, Pikachu! <span>💛</span></h1>
+      <p class="intro">
+        Someone made you a tiny corner of the internet.
+        No assignments, no boring lectures. Just you, me,
+        a few memories, and a little chaos.
+      </p>
+      <button class="primary" data-go="gallery">
+        Okay, show me 👀 →
+      </button>
+      <p class="tiny">Made with questionable levels of effort.</p>
+    </section>
+
+    <section id="gallery" class="chapter hidden">
+      <p class="eyebrow">CHAPTER 01</p>
+      <h2>The Pikachu Gallery 📸</h2>
+      <p class="subtitle">
+        Three pictures that earned their own little corner.
+      </p>
+
+      <div class="photo-grid">
+        <article class="polaroid">
+          <img src="./assets/photos/photo1.jpg"
+               alt="Pikachu picture one" loading="lazy">
+          <h3>Exhibit A</h3>
+          <p>Some pictures deserve a spot outside the gallery. 😌</p>
+        </article>
+        <article class="polaroid tilted">
+          <img src="./assets/photos/photo2.jpg"
+               alt="Pikachu picture two" loading="lazy">
+          <h3>Exhibit B</h3>
+          <p>Looking innocent again? I have my doubts. ⚡</p>
+        </article>
+        <article class="polaroid">
+          <img src="./assets/photos/photo3.jpg"
+               alt="Pikachu picture three" loading="lazy">
+          <h3>Exhibit C</h3>
+          <p>Okay, I'll stop before you get too proud. 😂</p>
+        </article>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="secondary" data-go="home">← Home</button>
+        <button class="primary" data-go="voice">Next chapter →</button>
+      </div>
+    </section>
+
+    <section id="voice" class="chapter hidden">
+      <p class="eyebrow">CHAPTER 02</p>
+      <h2>The Voice Notes Department 🎙️</h2>
+      <p class="subtitle">
+        Two performances. One very questionable audience.
+      </p>
+
+      <article class="music-card">
+        <span class="big-icon">🎧</span>
+        <p class="eyebrow">PART A · HER VOICE</p>
+        <h3 id="herQuestion">Wanna hear my favourite vocal?</h3>
+        <p id="herMessage" class="subtitle">
+          A very important musical mission awaits.
+        </p>
+        <div id="herChoices" class="choices">
+          <button class="primary" data-her="yes">YESSS 🎶</button>
+          <button class="secondary" data-her="no">Nope 🙃</button>
+        </div>
+        <div id="herVideoArea" class="video-area hidden">
+          <video controls playsinline preload="metadata">
+            <source src="./assets/videos/her-singing.mp4"
+                    type="video/mp4">
+            Your browser cannot play this video.
+          </video>
+          <p>Okay, official vocal appreciation time. 👏</p>
+          <button class="primary" data-next-voice>Next: my turn 🎤</button>
+        </div>
+      </article>
+
+      <article class="music-card">
+        <span class="big-icon">🎤</span>
+        <p class="eyebrow">PART B · MY VOICE</p>
+        <h3 id="myQuestion">Now let me sing for you. Wanna hear?</h3>
+        <p id="myMessage" class="subtitle">
+          Warning: the singer accepts absolutely no responsibility.
+        </p>
+        <div id="myChoices" class="choices">
+          <button class="primary" data-mine="yes">YES 🎤</button>
+          <button class="secondary" data-mine="no">NO 😭</button>
+        </div>
+        <div id="myVideoArea" class="video-area hidden">
+          <video controls playsinline preload="metadata">
+            <source src="./assets/videos/my-singing.mp4"
+                    type="video/mp4">
+            Your browser cannot play this video.
+          </video>
+          <p>Thank you for surviving the concert. 😂</p>
+          <button class="primary" data-show-rating>Judge my singing →</button>
+        </div>
+      </article>
+
+      <article id="ratingCard" class="music-card hidden">
+        <p class="eyebrow">THE OFFICIAL JUDGING PANEL</p>
+        <h3>Rate the damage 🎼</h3>
+        <form id="ratingForm">
+          <label for="score">Your score: <strong id="scoreLabel">8/10</strong></label>
+          <input id="score" type="range" min="1" max="10" value="8">
+          <label for="review">Your professional review</label>
+          <select id="review">
+            <option>Actually good, I'm impressed 😌</option>
+            <option>Cute but needs practice 😂</option>
+            <option>Never sing again 💀</option>
+            <option>10/10 because I'm nice 😎</option>
+          </select>
+          <button class="primary" type="submit">Submit my verdict</button>
+        </form>
+        <p id="ratingResult" class="result" aria-live="polite"></p>
+        <p class="tiny">Your verdict appears here on this device.</p>
+      </article>
+
+      <div class="nav-buttons">
+        <button class="secondary" data-go="gallery">← Previous</button>
+        <button class="primary" data-go="poetry">Next chapter →</button>
+      </div>
+    </section>
+
+    <section id="poetry" class="chapter hidden">
+      <p class="eyebrow">CHAPTER 03</p>
+      <h2>The Pikachu Poetry Vault ✍️</h2>
+      <p class="subtitle">
+        Classified documents based on actual Pikachu behaviour.
+      </p>
+
+      <article class="poem">
+        <p class="eyebrow">FILE 001 · THREAT LEVEL: CUTE</p>
+        <h3>Marungi ^π^</h3>
+        <p class="poem-text">Kehti ho “maarungi”, badi shiddat se dhamkaati ho,
+Phir apni hi baaton par khud hi muskuraati ho.
+Tumhare har lafz mein ik alag hi shararat hai,
+Dhamkiyon ke parde mein chhupi tumhari nazakat hai.</p>
+      </article>
+
+      <article class="poem">
+        <p class="eyebrow">FILE 002 · STORY MODE</p>
+        <h3>Aj jaante ho :////////</h3>
+        <p class="poem-text">Har roz naye qisse sunaati ho tum,
+Apni baaton se mehfil sajaati ho tum,
+“ Aaj jaante ho…” se shuru hoti hai har kahaani,
+Aur apne andaaz se har baat banaati ho tum.</p>
+      </article>
+
+      <article class="poem">
+        <p class="eyebrow">FILE 003 · DRAMA ALERT</p>
+        <h3>Baat Nahi Karungi, Jao :pp</h3>
+        <p class="poem-text">“Baat nahi karungi, jao,” yeh farmaan sunaati ho,
+Khud hi rooth kar phir khud hi yaad aati ho.
+Yeh kaisa hunar hai tumhari narazgi mein,
+Door jaane ko kehti ho, phir baaton mein uljhaati ho.</p>
+      </article>
+
+      <div class="nav-buttons">
+        <button class="secondary" data-go="voice">← Previous</button>
+        <button class="primary" data-go="memories">Final chapter 💛 →</button>
+      </div>
+    </section>
+
+    <section id="memories" class="chapter hidden">
+      <p class="eyebrow">THE BONUS CHAPTER</p>
+      <h2>Our Two-Month Time Capsule 💌</h2>
+      <p class="subtitle">
+        Two months of random conversations, unexpected laughs,
+        dramatic threats, and legendary “Aaj jaante ho…” stories.
+      </p>
+
+      <div class="memory-grid">
+        <figure class="memory">
+          <img src="./assets/memories/chat1.jpg"
+               alt="Memory screenshot one" loading="lazy">
+          <figcaption>Memory unlocked #1</figcaption>
+        </figure>
+        <figure class="memory">
+          <img src="./assets/memories/chat2.jpg"
+               alt="Memory screenshot two" loading="lazy">
+          <figcaption>Memory unlocked #2</figcaption>
+        </figure>
+        <figure class="memory">
+          <img src="./assets/memories/chat3.jpg"
+               alt="Memory screenshot three" loading="lazy">
+          <figcaption>Memory unlocked #3</figcaption>
+        </figure>
+      </div>
+
+      <div class="ending">
+        <div class="electric">⚡ ✨ ⚡</div>
+        <h2>End of this little adventure.</h2>
+        <p>
+          Here's to more random conversations, more memories,
+          and more reasons to annoy each other. 😂
+        </p>
+        <p class="signature">— Your unofficial Pikachu researcher ⚡</p>
+        <button class="primary" data-go="home">Replay the adventure ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with a little chaos and a lot of ⚡</p>
+  </footer>
+</body>
+</html>
